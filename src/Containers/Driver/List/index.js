@@ -53,8 +53,8 @@ class DriverList extends Component {
     const { showTicketGenerate, showTicket } = this.state
     return (
       <Row>
-        <Col xs={12}>
-          <Card style={{ width: '50%' }}>
+        <Col xs={12} sm={12} md={6}>
+          <Card>
             <Card.Header style={{ backgroundColor: '#fff' }}>
               <Row>
                 <Col xs={7}>

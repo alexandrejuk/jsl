@@ -13,11 +13,11 @@ const TicketModal = ({ modalShow, onHide }) => (
   >
     <Modal.Body>
       <Row>
-        <Col xs={10}>
+        <Col xs={8}>
           <h4>JSL S.A</h4>
           <p>52.548.435/0001-79</p>
         </Col>
-        <Col xs={2}>
+        <Col xs={4}>
           <h2>9876</h2>
           <p>security code</p>
         </Col>
