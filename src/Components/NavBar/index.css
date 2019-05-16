@@ -3,8 +3,8 @@
   background: #FFF;
 }
 .logo-image {
-  width: 90px;
-  height: auto;
+  width: auto;
+  height: 85px;
   overflow: hidden;
 }
 .logo,
@@ -21,8 +21,8 @@ ul.nav-menu {
   padding: 0;
   justify-content: center;
   list-style: none;
-  color: #a7a7a7;
-  box-shadow: inset 0 .3em 1.2em #E2E8F7;
+  color: #333;
+  box-shadow: inset 0 .3em 1.2em rgb(226, 230, 241);
 }
 .nav-menu-item {
   padding: 20px;  
@@ -39,6 +39,6 @@ a.link-custom:active,
   color: #C8001D !important;
 }
 a.link-custom {
-  color: #a7a7a7; 
+  color: #333; 
   text-decoration: none;
 }

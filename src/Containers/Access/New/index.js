@@ -84,10 +84,10 @@ const New = () => (
             Descarregar
           </div>
           <div className='service'>
-            Carregar + NF
+            Carregar<br/> + NF
           </div>
           <div className='service'>
-            Descarregar + NF
+            Descarregar<br/> + NF
           </div>
         </div>
       </Col>
@@ -103,9 +103,8 @@ const New = () => (
         <p style={{  margin: '20px auto', width:'40%' }}>
           Ao clicar em Gerar Acesso você está de acordo com nossa
           <span style={{ color: '#C8001D'}}>
-            <br/>Política de Privacidade e Uso de Informações<br/>
-          </span>
-          da JSL.
+            <br/>Política de Privacidade e Uso de Informações
+          </span>.
         </p>
       </Col>
     </Row>
