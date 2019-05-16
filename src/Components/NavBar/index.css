@@ -30,9 +30,15 @@ ul.nav-menu {
   transition: cubic-bezier(0.075, 0.82, 0.162, 1);
   font-weight: 600;
 }
+.a.link-custom:hover,
 .nav-menu-item:hover {
   color: #666;
 }
+a.link-custom:active,
 .nav-menu-item--checked {
-  color: #C8001D;
+  color: #C8001D !important;
+}
+a.link-custom {
+  color: #a7a7a7; 
+  text-decoration: none;
 }

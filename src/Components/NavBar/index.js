@@ -8,9 +8,21 @@ const NarBar = () => (
       <img className='logo-image' src={Logo} alt='jsl logo' title='logo' />
     </div>
     <ul className='nav-menu'>
-      <li className='nav-menu-item nav-menu-item--checked'>Acesso</li>
-      <li className='nav-menu-item'>Painel</li>
-      <li className='nav-menu-item'>Serviços</li>
+      <li className='nav-menu-item nav-menu-item--checked'>
+        <a class="link-custom" href='#logged/access/new'>
+          Acesso
+        </a>
+      </li>
+      <li className='nav-menu-item'>
+        <a class="link-custom" href='#logged/access/painel'>
+          Painel
+        </a>
+      </li>
+      <li className='nav-menu-item'>
+        <a class="link-custom" href='#logged/access/services'>
+          Serviços
+        </a>
+        </li>
     </ul>
   </nav>
 ) 
