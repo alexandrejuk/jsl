@@ -26,8 +26,8 @@
   height: 110px;
   width: 110px;
   color: #C8001D;
-  border: 2px solid #C8001D;
-  font-weight: 600;
+  border: 1px solid #C8001D;
+  font-weight: 500;
   cursor: pointer;
   transition: cubic-bezier(0.215, 0.610, 0.355, 1);
   margin: 14px 6px;
