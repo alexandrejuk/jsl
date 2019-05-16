@@ -1,0 +1,39 @@
+.form-group-custom {
+  margin: 20px 0;
+}
+.form-control-custom {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.form-control-custom:active {
+  border: none !important;
+  outline: none !important;
+}
+ 
+
+.service-group {
+  display: flex;
+}
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
+  height: 110px;
+  width: 110px;
+  color: #C8001D;
+  border: 2px solid #C8001D;
+  font-weight: 600;
+  cursor: pointer;
+  transition: cubic-bezier(0.215, 0.610, 0.355, 1);
+  margin: 14px;
+  padding: 4px;
+}
+
+.service:hover {
+  background-color: #C8001D;
+  color: #fff;
+}
