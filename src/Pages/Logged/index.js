@@ -1,11 +1,11 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Driver from './Driver'
+import Access from './Access'
 
 const Logged = () => (
   <Switch>
-    <Route path='/logged/driver' component={Driver} />
+    <Route path='/logged/access' component={Access} />
   </Switch>
 ) 
  
