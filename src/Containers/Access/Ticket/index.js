@@ -1,10 +1,17 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-import { Logo } from '../../../assets/'
+import { Logo, CheckIn } from '../../../assets/'
 import './index.css'
 
 const Ticket = (props) => (
  <div>
+    <div className='ticket-access-info'>
+      <div className='ticket-access-info--logo'>
+        <img className='ticket-access-info--logo__image' src={CheckIn} alt='check-in' />
+      </div>
+      <h4>Ticket de Acesso Liberado!</h4>
+      <p></p>
+    </div>
     <div className='card'>
     <div className='card-header' style={{ backgroundColor: '#fff' }}>
       <div className='logo-wrapper'>
