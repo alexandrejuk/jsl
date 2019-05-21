@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 const CopyRight = () => (
-  <Container fluid={true} style={{ backgroundColor: '#f2f2f2'}}>
+  <Container className='no-print' fluid={true} style={{ backgroundColor: '#f2f2f2'}}>
     <Container>
       <Row>
         <Col md={8} style={{ margin: '30px 5px'}}>

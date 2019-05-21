@@ -3,7 +3,7 @@ import './index.css'
 import { Logo } from '../../assets/'
 
 const NarBar = () => (
-  <nav className='nav-bar'>
+  <nav className='nav-bar no-print'>
     <div className='logo'>
       <img className='logo-image' src={Logo} alt='jsl logo' title='logo' />
     </div>

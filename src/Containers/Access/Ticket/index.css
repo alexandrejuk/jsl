@@ -75,3 +75,18 @@ p {
 .security-code p {
   font-size: .8em;
 }
+.btn-ticket {
+  width: calc(50% - 8px);
+  margin: 4px auto; 
+}
+.btn-ticket--print {
+  width: calc(50% - 8px);
+  margin: 10px auto; 
+}
+.btn-group--ticket {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;  
+  width: 427px;
+  padding: 24px;
+}

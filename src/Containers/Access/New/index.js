@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 import './index.css'
 
 const New = () => (
-  <Container fluid={true} style={{ backgroundColor: '#fff'}}>
+  <Container className='no-print' fluid={true} style={{ backgroundColor: '#fff'}}>
     <Row>
       <Col style={{ margin: '40px auto 0 auto'}} md={8}>
         <h5>Dados Motorista</h5>

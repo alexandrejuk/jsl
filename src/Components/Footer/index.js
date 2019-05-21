@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 
 const Footer = () => (
-  <Container fluid={true} style={{ backgroundColor: '#191919'}}>
+  <Container className='no-print' fluid={true} style={{ backgroundColor: '#191919'}}>
     <Container>
       <Row>
         <Col md={12} style={{ margin: '20px 0 10px 0'}}>
