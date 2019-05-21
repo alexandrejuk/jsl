@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
@@ -14,31 +15,31 @@ const New = () => (
       </Col>
       <Col md={8} style={{ margin: 'auto'}}>
         <Form>
-          <Form.Group controlId="formBasicCpf">
+          <Form.Group controlId='formBasicCpf'>
             <Form.Label>CPF</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
              Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formBasicNome">
+          <Form.Group controlId='formBasicNome'>
             <Form.Label>Nome</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
               Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formBasicRg">
+          <Form.Group controlId='formBasicRg'>
             <Form.Label>RG</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
               Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formBasicCNH">
+          <Form.Group controlId='formBasicCNH'>
             <Form.Label>CNH</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
               Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
@@ -49,24 +50,24 @@ const New = () => (
       </Col>
       <Col md={8} style={{ margin: 'auto'}}>
         <Form>
-          <Form.Group controlId="formBasicPlaca">
+          <Form.Group controlId='formBasicPlaca'>
             <Form.Label>Placa</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
               Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formBasicModelo">
+          <Form.Group controlId='formBasicModelo'>
             <Form.Label>Modelo</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
               Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
-          <Form.Group controlId="formBasicFabricante">
+          <Form.Group controlId='formBasicFabricante'>
             <Form.Label>Fabricante</Form.Label>
-            <Form.Control type="text" required/>
-            <Form.Control.Feedback type="invalid">
+            <Form.Control type='text' required/>
+            <Form.Control.Feedback type='invalid'>
               Campo obrigatório!
             </Form.Control.Feedback>
           </Form.Group>
@@ -92,15 +93,17 @@ const New = () => (
         </div>
       </Col>
       <Col style={{ margin: '20px auto'}} md={8}>
-        <Button variant='outline-primary' size="lg" block>
-          Gerar Acesso
-        </Button>
-        <Button variant='outline-danger' size="lg" block>
+          <Button variant='outline-primary' size='lg' block>
+            <Link to='/logged/access/ticket' className='no-sytle-link'>  
+              Gerar Acesso
+            </Link>
+          </Button>
+        <Button variant='outline-danger' size='lg' block>
           Limpar
         </Button>
       </Col>
-      <Col style={{ textAlign: 'center'}} md={12}>
-        <p style={{  margin: '20px auto', width:'40%' }}>
+      <Col style={{ textAlign: 'center',  margin: '20px 0' }} md={12}>
+        <p>
           Ao clicar em Gerar Acesso você está de acordo com nossa
           <span style={{ color: '#C8001D'}}>
             <br/>Política de Privacidade e Uso de Informações

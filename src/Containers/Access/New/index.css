@@ -38,3 +38,11 @@
   background-color: #C8001D;
   color: #fff;
 }
+.no-sytle-link {
+  text-decoration: none;
+}
+
+.no-sytle-link:hover {
+  text-decoration: none;
+  color: #fff;
+}

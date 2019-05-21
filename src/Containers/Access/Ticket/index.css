@@ -1,0 +1,77 @@
+h5,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.card {
+  padding: 20px;
+  margin: 20px auto;
+  content: '';
+  background: #FFF;
+  width: 427px;
+  height: 560px;
+  border: 1px solid #666;
+}
+.card-header {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.barcode-wrapper {
+  margin: auto;
+}
+.barcode {
+  text-align: center;
+  font-family: 'Libre Barcode 128', cursive;
+  font-size: 4em;
+  letter-spacing: .06em;
+}
+.code-plain-text {
+  text-align: center;
+  position: relative;
+  top: -35px;
+}
+.card-body-content--ticket {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 2.7px solid #000;
+  height: 180px;
+  padding: 14px;
+}
+.dest-info, .rem-info {
+  margin: 5px 0;
+  font-size: .8em;
+}
+.logo-wrapper {
+  width: 120px;
+  height: auto;
+}
+.logo {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.qrcode {
+  width: 130px;
+  height: auto;
+}
+.qrcodeImage {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+} 
+.barcode--validation {
+  margin: 50px;
+  width: 100%;
+}
+.security-code {
+  text-align: center;
+}
+.security-code p {
+  font-size: .8em;
+}
