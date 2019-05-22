@@ -48,7 +48,7 @@ const New = () => (
             <Card.Title>Dados Motorista</Card.Title>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridName">
-                <Form.Label>Nome Completo</Form.Label>
+                <Form.Label>Nome</Form.Label>
                 <Form.Control type="text" placeholder="insira o nome completo" />
               </Form.Group>
               <Form.Group as={Col} controlId="formGridDocumentId">

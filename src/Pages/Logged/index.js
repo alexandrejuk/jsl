@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+
+import NavBar from '../../Components/NavBar'
+import CopyRight from '../../Components/Copyright'
+import Footer from '../../Components/Footer'
 
 import Access from './Access'
 
 const Logged = () => (
-  <Switch>
-    <Route path='/logged/access' component={Access} />
-  </Switch>
+  <Fragment>
+    <Container fluid={true} style={{ margion: '0', padding: '0' }}>
+      <NavBar />
+    </Container>
+    <Switch>
+      <Route path='/logged/access' component={Access} />
+    </Switch>
+    <Container fluid={true} style={{ margion: '0', padding: '0' }}>
+      <CopyRight />
+      <Footer />
+    </Container>
+  </Fragment>
 ) 
  
 export default Logged

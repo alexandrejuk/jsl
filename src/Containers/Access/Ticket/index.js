@@ -50,7 +50,7 @@ const Ticket = ({ handlePrint }) => (
       <Button variant="outline-danger" block>Novo Ticket</Button>
     </div>
     <div className='btn-ticket no-print'>
-      <Button variant="outline-danger" block>Ir para Gerenciar</Button>
+      <Button variant="outline-danger" block>Gerenciar</Button>
     </div>
     <div className='btn-ticket--print no-print'>
       <Button variant="outline-primary" block onClick={handlePrint}>Imprimir</Button>
