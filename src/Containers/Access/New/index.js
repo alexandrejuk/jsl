@@ -92,7 +92,7 @@ const New = () => (
                 <Form.Control placeholder="insira a razão social/nome" />
               </Form.Group>
             </Form.Row>
-              <Link to='/logged/access/ticket' className='no-sytle-link'>  
+              <Link to='/logged/access/ticket'>  
                 <Button  variant='outline-primary'>
                   Check-in
                 </Button>

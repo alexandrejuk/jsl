@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { Logo, CheckIn } from '../../../assets/'
 import './index.css'
@@ -39,21 +40,31 @@ const Ticket = ({ handlePrint }) => (
           <p>security code</p>
         </div>
         <div className='barcode-wrapper barcode--validation'>
-          <p className='barcode'>123490</p>
-          <p className='code-plain-text'>123490</p>
+          <p className='barcode'>1410</p>
+          <p className='code-plain-text'>1410</p>
         </div>
       </div>
     </div>
   </div>
   <div className='btn-group--ticket no-print'>
     <div className='btn-ticket no-print'>
-      <Button variant="outline-danger" block>Novo Ticket</Button>
+      <Link to='/logged/access/new'>  
+        <Button variant="outline-danger" block>
+          Novo Ticket
+        </Button>
+      </Link>
     </div>
     <div className='btn-ticket no-print'>
-      <Button variant="outline-danger" block>Gerenciar</Button>
+      <Link to='/logged/access/manager'>  
+        <Button variant="outline-danger" block>
+          Gerenciar
+        </Button>
+      </Link>
     </div>
     <div className='btn-ticket--print no-print'>
-      <Button variant="outline-primary" block onClick={handlePrint}>Imprimir</Button>
+      <Button variant="outline-primary" block onClick={handlePrint}>
+        Imprimir
+      </Button>
     </div>
   </div>
  </div>
