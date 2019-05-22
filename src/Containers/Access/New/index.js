@@ -75,7 +75,9 @@ const New = () => (
               <Form.Group as={Col} controlId="formGridFabric">
                 <Form.Label>Fabricante</Form.Label>
                 <Form.Control as="select">
-                  <option>Choose...</option>
+                  <option>Escolha o fabricante</option>
+                  <option>...</option>
+                  <option>...</option>
                   <option>...</option>
                 </Form.Control>
               </Form.Group>
