@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
-import { Switch, Route } from 'react-router-dom'
-
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import NavBar from '../Components/NavBar'
 import CopyRight from '../Components/Copyright'
@@ -14,8 +13,9 @@ const Pages = () => (
       <NavBar />
     </Container>
     <Switch>
-      <Route path="/logged" component={Logged}/>
-      <Route path="/about" component={() => 'about'}/>
+      <Route path='/logged' component={Logged}/>
+      <Route path='/about' component={() => 'about'}/>
+      <Redirect to='/logged/access/new' />
     </Switch>
     <Container fluid={true} style={{ margion: '0', padding: '0' }}>
       <CopyRight />

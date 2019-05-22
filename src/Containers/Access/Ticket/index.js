@@ -3,19 +3,19 @@ import Button from 'react-bootstrap/Button'
 import { Logo, CheckIn } from '../../../assets/'
 import './index.css'
 
-const Ticket = (props) => (
+const Ticket = ({ handlePrint }) => (
  <div>
-    <div className='ticket-access-info'>
+    <div className='ticket-access-info no-print'>
       <div className='ticket-access-info--logo'>
         <img className='ticket-access-info--logo__image' src={CheckIn} alt='check-in' />
       </div>
       <h4>Ticket de Acesso Liberado!</h4>
       <p></p>
     </div>
-    <div className='card'>
-    <div className='card-header' style={{ backgroundColor: '#fff' }}>
+    <div className='card-ticket'>
+    <div className='card-header-ticket' style={{ backgroundColor: '#fff' }}>
       <div className='logo-wrapper'>
-        <img className='logo' src={Logo} alt='altd' />
+        <img className='logo' src={Logo} alt='logo' />
       </div>
       <div className='qrcode'>
         <img className='qrcodeImage' src='https://pngimg.com/uploads/qr_code/qr_code_PNG38.png' alt='qrcode' />
@@ -50,10 +50,10 @@ const Ticket = (props) => (
       <Button variant="outline-danger" block>Novo Ticket</Button>
     </div>
     <div className='btn-ticket no-print'>
-      <Button variant="outline-danger" block>Ir para Painel</Button>
+      <Button variant="outline-danger" block>Ir para Gerenciar</Button>
     </div>
     <div className='btn-ticket--print no-print'>
-      <Button variant="outline-primary" block>Imprimir</Button>
+      <Button variant="outline-primary" block onClick={handlePrint}>Imprimir</Button>
     </div>
   </div>
  </div>

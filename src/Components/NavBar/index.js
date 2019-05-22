@@ -10,19 +10,14 @@ const NarBar = () => (
     <ul className='nav-menu'>
       <li className='nav-menu-item nav-menu-item--checked'>
         <a class="link-custom" href='#logged/access/new'>
-          Acesso
+          Check-In
         </a>
       </li>
       <li className='nav-menu-item'>
         <a class="link-custom" href='#logged/access/painel'>
-          Painel
+          Gerenciar
         </a>
       </li>
-      <li className='nav-menu-item'>
-        <a class="link-custom" href='#logged/access/services'>
-          Serviços
-        </a>
-        </li>
     </ul>
   </nav>
 ) 
