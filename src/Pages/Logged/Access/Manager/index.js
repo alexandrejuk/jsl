@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 import ManagerContainer from '../../../../Containers/Access/manager'
+import TicketService from '../../../../services/ticket'
 
 class Manager extends Component {
+  ticketService = null
   state = {
     isLoading: false,
     ticketList: [],
+  }
+  
+  componentDidMount() {
+    this.ticketService = new TicketService()
+    this.handleListTickets()
+  }
+
+  handleListTickets = () => {
+    this.ticketService
+      .tickets()
+      .then(({ data: ticketList }) => this.setState({ ticketList }))
   }
 
   render() {
@@ -14,7 +27,10 @@ class Manager extends Component {
     } = this.state
 
     return (
-      <ManagerContainer />
+      <ManagerContainer 
+        ticketList={ticketList}
+        isLoading={isLoading}
+      />
     )
   }
 }

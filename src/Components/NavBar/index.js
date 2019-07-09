@@ -9,12 +9,12 @@ const NarBar = () => (
     </div>
     <ul className='nav-menu'>
       <li className='nav-menu-item nav-menu-item--checked'>
-        <a class="link-custom" href='#logged/access/new'>
+        <a className="link-custom" href='#logged/access/new'>
           Check-In
         </a>
       </li>
       <li className='nav-menu-item'>
-        <a class="link-custom" href='#logged/access/painel'>
+        <a className="link-custom" href='#logged/access/manager'>
           Gerenciar
         </a>
       </li>

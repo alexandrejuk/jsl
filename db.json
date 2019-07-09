@@ -1,0 +1,117 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "driverName": "Thiago Ramalho",
+      "documentId": "538937993",
+      "cpf": "11122233344499",
+      "vehicleInfo": {
+        "plate": "ols9988",
+        "brand": "ford",
+        "model": "f1000"
+      },
+      "securityCode": "0989982",
+      "status": "Aguardando Serviço",
+      "ticketId": "48937489",
+      "createdTicketDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "operationService": "Carregar"
+    },
+    {
+      "id": 2,
+      "driverName": "Thiago Ramalho",
+      "documentId": "538937993",
+      "cpf": "11122233344499",
+      "vehicleInfo": {
+        "plate": "ols9988",
+        "brand": "ford",
+        "model": "f1000"
+      },
+      "securityCode": "0989982",
+      "status": "Finalizado",
+      "ticketId": "48937489",
+      "createdTicketDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "operationService": "Carregar"
+    },
+    {
+      "driverName": "Valdir Mendes",
+      "documentId": "9999999999",
+      "cpf": "9999999999",
+      "operationService": "Carregar",
+      "vehicleInfo": {
+        "plate": "FFF8899",
+        "brand": "FORD",
+        "model": "F4000"
+      },
+      "securityCode": "0989982",
+      "status": "Aguardando Serviço",
+      "ticketId": "48937489",
+      "createdTicketDate": "2019-07-09T13:56:56.751Z",
+      "id": 3
+    },
+    {
+      "driverName": "alexandre s soares",
+      "documentId": "8877376236263",
+      "cpf": "3217398127398129",
+      "operationService": "Descarregar",
+      "vehicleInfo": {
+        "plate": "pkl2223",
+        "brand": "VOLVO",
+        "model": "volvo"
+      },
+      "securityCode": "0989982",
+      "status": "Aguardando Serviço",
+      "ticketId": "48937489",
+      "createdTicketDate": "2019-07-09T14:14:52.982Z",
+      "id": 4
+    },
+    {
+      "driverName": "Vanessa",
+      "documentId": "4829482308409",
+      "cpf": "8432804280942",
+      "operationService": "Descarregar",
+      "vehicleInfo": {
+        "plate": "uuu34342",
+        "brand": "VOLVO",
+        "model": "fusca"
+      },
+      "securityCode": "0989982",
+      "status": "Aguardando Serviço",
+      "ticketId": "48937489",
+      "createdTicketDate": "2019-07-09T14:30:21.070Z",
+      "id": 5
+    },
+    {
+      "driverName": null,
+      "documentId": null,
+      "cpf": null,
+      "vehicleInfo": {
+        "plate": null,
+        "brand": null,
+        "model": null
+      },
+      "securityCode": "0989982",
+      "status": "Aguardando Serviço",
+      "ticketId": "489374892",
+      "createdTicketDate": "2019-07-09T14:43:42.265Z",
+      "id": 6
+    }
+  ],
+  "access": [
+    {
+      "id": 1,
+      "driverId": 1,
+      "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+    },
+    {
+      "id": 2,
+      "driverId": 1,
+      "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+      "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+    }
+  ]
+}
