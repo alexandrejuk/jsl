@@ -4,6 +4,9 @@ import Banner_1 from './banner/jsl_slideshow1-img.png'
 import pack from './icons/caixa.svg'
 import clock from './icons/relogio.svg'
 import barcode from './icons/barcode.jpg'
+import storange from './icons/armazenamento.svg'
+import carga from './icons/carga.svg'
+import servico from './icons/servico.svg'
 
 export {
   Logo,
@@ -12,4 +15,7 @@ export {
   pack,
   clock,
   barcode,
+  storange,
+  carga,
+  servico
 }

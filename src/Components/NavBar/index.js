@@ -14,6 +14,11 @@ const NarBar = () => (
         </a>
       </li>
       <li className='nav-menu-item'>
+        <a className="link-custom" href='#logged/access/doca'>
+          Docas
+        </a>
+      </li>
+      <li className='nav-menu-item'>
         <a className="link-custom" href='#logged/access/manager'>
           Gerenciar
         </a>

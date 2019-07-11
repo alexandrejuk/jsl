@@ -21,6 +21,7 @@ class New extends Component {
     documentId: value.documentId,
     cpf: value.cpf,
     operationService: value.operationService,
+    operation: value.operation,
     vehicleInfo: {
       plate: value.plate,
       brand: value.brand,

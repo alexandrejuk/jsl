@@ -1,0 +1,78 @@
+.card-doca {
+  margin: 20px 5px 0 5px;
+  width: 315px;
+  height: 368px;
+  min-width: 315px;
+  min-height: 368px;
+}
+.card-doca__header {
+  display: flex;
+  justify-content: space-between;
+}
+.card-doca__header--title {
+  font-weight: bold;
+  color: #333;
+}
+.card-doca__header--subtitle {
+  color: rgb(165, 166, 168);
+  font-size: .8em;
+}
+.card-doca__body {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card-doca__body--item {
+  padding: 10px 0
+}
+.card-doca__body--title {
+  font-size: .9em;
+}
+.card-doca__body--subtitle {
+  color: rgb(165, 166, 168);
+  font-size: .8em;
+}
+.line-top {
+  border-top: 1px solid #e7e7e7;
+}
+.operation {
+  width: 100%;
+}
+span.card-doca__body--quantity {
+  font-size: 1.3em;
+}
+.btn-information {
+  border: 1px solid #333;
+  color: 333;
+  font-size: .6em;
+  background: transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.btn-information:hover {
+  background: #333;
+  color: #fff;
+}
+.operation-btn {
+  width: 100%;
+  text-align: center;
+}
+.card-doca__header-wrapper-image {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+.card-doca__header--image {
+  width: 100%;
+}
+.info-icon-color {
+  color: #4958c0 !important;
+}
+
+.doca-disponivel {
+  text-align: center;
+  margin-top: 70px !important;
+}

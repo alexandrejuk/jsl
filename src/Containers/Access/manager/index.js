@@ -103,7 +103,7 @@ class Manager extends Component {
             <Table responsive hover>
               <thead>
                 <tr>
-                  <th>Ticket Id</th>
+                  <th>TicketId</th>
                   <th>Motorista</th>
                   <th>Serviço</th>
                   <th>Operação</th>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
@@ -38,10 +37,26 @@ class New extends Component {
         <Container>
           <Card className='card-position-access'>
             <Card.Body>
-              <Card.Title>Serviço</Card.Title>
+              <Card.Title>Ticket Acesso</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
                 <Form>
-                  <Form.Group as={Row}>
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formGridFabric">
+                    <Form.Label>Operação</Form.Label>
+                    <Form.Control 
+                      as="select" 
+                      name="operation" 
+                      onChange={this.handlerFormTicket}
+                    >
+                      <option>Escolha a Operação</option>
+                      <option value="FORD DO BRAZIL">FORD DO BRAZIL</option>
+                      <option value="HYUNDAI BRASIL CAOA">HYUNDAI BRASIL CAOA</option>
+                      <option value="VOLVO BRASIL">VOLVO BRASIL</option>
+                      <option value="WILTRON BRASIL">WILTRON BRASIL</option>
+                    </Form.Control>
+                  </Form.Group>
+                  <Form.Group as={Col}>
+                    <Form.Label>Tipo de Serviço</Form.Label>
                     <Col sm={10}>
                       <Form.Check
                         inline
@@ -69,6 +84,7 @@ class New extends Component {
                       />
                     </Col>
                   </Form.Group>
+                  </Form.Row>
                 </Form>
               </Card.Subtitle>
 
