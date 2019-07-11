@@ -14,7 +14,16 @@
       "status": "Aguardando Serviço",
       "ticketId": "48937489",
       "createdTicketDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "operationService": "Carregar"
+      "operationService": "Carregar",
+      "operation": "FORD DO BRASIL LTDA",
+      "access": {
+        "id": 1,
+        "driverId": 1,
+        "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+      }
     },
     {
       "id": 2,
@@ -30,13 +39,23 @@
       "status": "Finalizado",
       "ticketId": "48937489",
       "createdTicketDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "operationService": "Carregar"
+      "operationService": "Carregar",
+      "operation": "FORD DO BRASIL LTDA",
+      "access": {
+        "id": 1,
+        "driverId": 1,
+        "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+      }
     },
     {
       "driverName": "Valdir Mendes",
       "documentId": "9999999999",
       "cpf": "9999999999",
       "operationService": "Carregar",
+      "operation": "FORD DO BRASIL LTDA",
       "vehicleInfo": {
         "plate": "FFF8899",
         "brand": "FORD",
@@ -46,7 +65,15 @@
       "status": "Aguardando Serviço",
       "ticketId": "48937489",
       "createdTicketDate": "2019-07-09T13:56:56.751Z",
-      "id": 3
+      "id": 3,
+      "access": {
+        "id": 1,
+        "driverId": 1,
+        "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+      }
     },
     {
       "driverName": "alexandre s soares",
@@ -61,8 +88,17 @@
       "securityCode": "0989982",
       "status": "Aguardando Serviço",
       "ticketId": "48937489",
+      "operation": "FORD DO BRASIL LTDA",
       "createdTicketDate": "2019-07-09T14:14:52.982Z",
-      "id": 4
+      "id": 4,
+      "access": {
+        "id": 1,
+        "driverId": 1,
+        "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+      }
     },
     {
       "driverName": "Vanessa",
@@ -77,41 +113,17 @@
       "securityCode": "0989982",
       "status": "Aguardando Serviço",
       "ticketId": "48937489",
+      "operation": "FORD DO BRASIL LTDA",
       "createdTicketDate": "2019-07-09T14:30:21.070Z",
-      "id": 5
-    },
-    {
-      "driverName": null,
-      "documentId": null,
-      "cpf": null,
-      "vehicleInfo": {
-        "plate": null,
-        "brand": null,
-        "model": null
-      },
-      "securityCode": "0989982",
-      "status": "Aguardando Serviço",
-      "ticketId": "489374892",
-      "createdTicketDate": "2019-07-09T14:43:42.265Z",
-      "id": 6
-    }
-  ],
-  "access": [
-    {
-      "id": 1,
-      "driverId": 1,
-      "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
-    },
-    {
-      "id": 2,
-      "driverId": 1,
-      "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
-      "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+      "id": 5,
+      "access": {
+        "id": 1,
+        "driverId": 1,
+        "initialDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "initialOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
+        "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
+      }
     }
   ]
 }

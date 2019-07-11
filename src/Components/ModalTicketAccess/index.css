@@ -1,0 +1,80 @@
+.modal-ticket-access-card-body {
+  padding: 60px 100px;
+}
+.modal-ticket-access__body {
+  margin-top: 40px;
+}
+.modal-ticket-access__body--access-info--content,
+.modal-ticket-access__header,
+.modal-ticket-access__body--driver-info--title,
+.modal-ticket-access__body--access-info--content--item,
+.modal-ticket-access__body--access-info--content--item-fx {
+  display: flex;
+  align-items: center;
+}
+.modal-ticket-access__header--title {
+  color: #0E0E0E;
+  font-family: arial;
+  margin: 0;
+}
+.modal-ticket-access__header--subtitle {
+  color: #747474;
+  margin: 0;
+}
+.modal-ticket-access__header--image-wrapper {
+  margin-right: 30px;
+  width: 60px;
+  height: auto;
+}
+.modal-ticket-access__header--image {
+  width: 100%;
+}
+.modal-ticket-access__body--driver-info--circle {
+  height: 9px;
+  width: 9px;
+  background-color: #fff;
+  border: 3px solid #6D72C9;
+  border-radius: 50%;
+  margin-right: 40px;
+}
+.modal-ticket-access__body--driver-info--text {
+  margin: 0;
+}
+.modal-ticket-access__body--driver-info--content {
+  margin-left: 30px;
+  margin-left: 49px;
+}
+.modal-ticket-access__body--driver-info--content > p {
+  font-size: 0.8em;
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  color: #333;
+}
+.modal-ticket-access__body--vehicle-info {
+  margin-top: 30px;
+}
+p.border-bottom-none {
+  border-bottom: none;
+}
+
+.modal-ticket-access__body--access-info--content-icon {
+  width: 20px;
+  margin-right: 10px;
+  margin-left: 40px;
+}
+.modal-ticket-access__body--access-info--content {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: space-around;
+  font-size: 0.8em;
+  color: #333;  
+}
+.modal-ticket-access__body--access-info--content--item {
+  margin: 10px 0;
+  width: 50% !important;
+  justify-content: space-between;
+}
