@@ -30,7 +30,13 @@ class New extends Component {
     this.props.handleSubmit(this.state)
   }
 
+  renderOperation = ({ id, description }) => (
+    <option key={id} value={id}>
+      {description}
+    </option>
+  )
   render() {
+    const { operationList } = this.props
     return (
       <>
         <img style={{ width: '100%'}} src={Banner_1} alt='banner-1' />
@@ -45,14 +51,11 @@ class New extends Component {
                     <Form.Label>Operação</Form.Label>
                     <Form.Control 
                       as="select" 
-                      name="operation" 
+                      name="operationId" 
                       onChange={this.handlerFormTicket}
                     >
                       <option>Escolha a Operação</option>
-                      <option value="FORD DO BRAZIL">FORD DO BRAZIL</option>
-                      <option value="HYUNDAI BRASIL CAOA">HYUNDAI BRASIL CAOA</option>
-                      <option value="VOLVO BRASIL">VOLVO BRASIL</option>
-                      <option value="WILTRON BRASIL">WILTRON BRASIL</option>
+                      {operationList.map(this.renderOperation)}
                     </Form.Control>
                   </Form.Group>
                   <Form.Group as={Col}>
@@ -62,24 +65,24 @@ class New extends Component {
                         inline
                         type="radio"
                         label="Carregar"
-                        name="operationService"
-                        value="Carregar"
+                        name="service"
+                        value="loading"
                         onChange={this.handlerFormTicket}
                       />
                       <Form.Check
                         inline
                         type="radio"
                         label="Descarregar"
-                        name="operationService"
-                        value="Descarregar"
+                        name="service"
+                        value="unload"
                         onChange={this.handlerFormTicket}
                       />
                       <Form.Check
                         inline
                         type="radio"
                         label="Carregar + Descarregar"
-                        name="operationService"
-                        value="Carregar + Descarregar"
+                        name="service"
+                        value="loading_unload"
                         onChange={this.handlerFormTicket}
                       />
                     </Col>
@@ -97,7 +100,7 @@ class New extends Component {
                       <Form.Control 
                         type="text" 
                         placeholder="insira o nome completo" 
-                        name="driverName" 
+                        name="name" 
                         onChange={this.handlerFormTicket}
                       />
                     </Form.Group>

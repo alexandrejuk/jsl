@@ -1,16 +1,16 @@
 import axios from 'axios'
-const url = 'http://localhost:3000/docas'
+const url = 'http://localhost:3000/api/v1/companies/ad67fc1e-7bbe-43a5-8049-11f1dc2aacbc/docas'
 
 class DocaService {
   saveDoca(value) {
     return axios.post(url, value)
   }
 
-  Docas() {
+  docas() {
     return axios.get(url)
   }
 
-  DocaId(id) {
+  docaId(id) {
     return axios.get(`${url}/${id}`)
   }
 

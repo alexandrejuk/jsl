@@ -2,37 +2,49 @@ import React, { Component } from 'react'
 import NewContainer from '../../../../Containers/Access/New'
 import TicketService from '../../../../services/ticket'
 import { Redirect } from 'react-router-dom'
+import OperationService from '../../../../services/operation';
 
 class New extends Component {
   ticketService = null
-  initialStatus = "Aguardando Serviço"
+  operationService = null
+  initialStatus = 'waiting_service'
+
   state = {
     isLoading: false,
     redirect: false,
     ticketId: null,
+    operationList: []
   }
 
   componentDidMount() {
     this.ticketService = new TicketService()
+    this.operationService = new OperationService()
+    this.handleOperations()
   }
 
   parserDateForm = value => ({
-    driverName: value.driverName,
-    documentId: value.documentId,
-    cpf: value.cpf,
-    operationService: value.operationService,
-    operation: value.operation,
-    vehicleInfo: {
+    driver: {
+      name: value.name,
+      documentId: value.documentId,
+      cpf: value.cpf,
+    },
+    operationId: value.operationId,
+    service: value.service,
+    vehicle: {
       plate: value.plate,
       brand: value.brand,
       model: value.model,
     },
-    securityCode: "0989982",
     status: this.initialStatus,
-    ticketId: "489374892",
-    createdTicketDate: new Date()
+    docaId: null,
+    barCode: '123'
   })
 
+  handleOperations() {
+    this.operationService
+      .operations()
+      .then(({ data: operationList }) => this.setState({ operationList }))
+  }
   saveNewTicket = value => {
     this.ticketService
       .saveTicket(this.parserDateForm(value))
@@ -42,12 +54,18 @@ class New extends Component {
   }
 
   render() {
-    const { isLoading, ticketId, redirect } = this.state
+    const { 
+      isLoading, 
+      ticketId, 
+      redirect,
+      operationList
+    } = this.state
     return (
       <>
         <NewContainer 
           handleSubmit={this.saveNewTicket}
           isLoading={isLoading}
+          operationList={operationList}
         />
         {
           redirect ? 

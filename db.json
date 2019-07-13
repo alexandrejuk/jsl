@@ -124,6 +124,23 @@
         "finalyOperationDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)",
         "finalyDate": "Tue Jul 09 2019 10:00:54 GMT-0300 (Brasilia Standard Time)"
       }
+    },
+    {
+      "driverName": "thiago ramalho silva",
+      "documentId": "8998898",
+      "cpf": "89898989",
+      "operationService": "Carregar",
+      "operation": "FORD DO BRAZIL",
+      "vehicleInfo": {
+        "plate": "89898989",
+        "brand": "FORD",
+        "model": "ford"
+      },
+      "securityCode": "0989982",
+      "status": "Aguardando Serviço",
+      "ticketId": "489374892",
+      "createdTicketDate": "2019-07-13T01:06:27.544Z",
+      "id": 6
     }
   ],
   "docas": [

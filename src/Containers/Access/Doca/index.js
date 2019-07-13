@@ -6,17 +6,21 @@ import './index.css'
 
 class Doca extends Component {
 
+  renderDoca = doca => (
+    <CardDoca
+      key={doca.id}
+      doca={doca} 
+      show={this.props.show}
+      handleUpdateDoca={this.props.handleUpdateDoca}
+      handleSelectDoca={this.props.handleSelectDoca}
+      handleShowModalBarCode={this.props.handleShowModalBarCode}
+    />
+  )
   render() {
+    const { docas } = this.props
     return (
       <Container  fluid className='doca-container'>
-        <CardDoca />
-        <CardDoca />
-        <CardDoca />
-        <CardDoca />
-        <CardDoca />
-        <CardDoca />
-        <CardDoca />
-        <CardDoca />
+        {docas.map(this.renderDoca)}
       </Container>
     )
   } 

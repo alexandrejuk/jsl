@@ -18,28 +18,39 @@ class Manager extends Component {
     showModalBarCode: false,
     ticketSelected: {
       id: null,
-      driverName: null,
-      documentId: null,
-      cpf: null,
-      vehicleInfo: {
-        plate: null,
-        brand: null,
-        model: null,
-      },
-      securityCode: null,
+      barCode: null,
       status: null,
-      ticketId: null,
-      createdTicketDate: null,
-      operationService: null,
-      access: {
+      service: null,
+      createdAt: null,
+      updatedAt: null,
+      companyId: null,
+      operationId: null,
+      driverId: null,
+      vehicleId: null,
+      driver: {
         id: null,
-        driverId: null,
-        initialDate: null,
-        initialOperationDate: null,
-        finalyOperationDate: null,
-        finalyDate: null,
+        name: null,
+        documentId: null,
+        cpf: null,
+        createdAt: null,
+        updatedAt: null,
+      },
+      vehicle: {
+        id: null,
+        model: null,
+        brand: null,
+        plate: null,
+        createdAt: null,
+        updatedAt: null,
+      },
+      operation: {
+        id: null,
+        description: null,
+        createdAt: null,
+        updatedAt: null,
+        companyId: null,
       }
-    }
+    } 
   }
 
   handleShowModal = (ticketSelected = {}) => {
@@ -55,10 +66,10 @@ class Manager extends Component {
 
   renderTicket = ticket => (
     <tr key={ticket.id}>
-      <td>{ticket.ticketId}</td>
-      <td>{ticket.driverName}</td>
-      <td>{ticket.operationService}</td>
-      <td>{ticket.vehicleInfo.model}</td>
+      <td>{ticket.barCode}</td>
+      <td>{ticket.driver.name}</td>
+      <td>{ticket.service}</td>
+      <td>{ticket.vehicle.model} - {ticket.vehicle.plate}</td>
       <td>
         <Badge pill variant='success'>
           {ticket.status}

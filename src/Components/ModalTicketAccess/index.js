@@ -21,7 +21,7 @@ const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
         </div>
         <div className='modal-ticket-access__header--text'>
           <p className='modal-ticket-access__header--subtitle'>Acessos na operação</p>
-          <h4 className='modal-ticket-access__header--title'>{ticketSelected.operation}</h4>
+          <h4 className='modal-ticket-access__header--title'>{ticketSelected.operation.description}</h4>
         </div>
       </div>
       <div className='modal-ticket-access__body'>
@@ -33,19 +33,20 @@ const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
             </h6>
           </div>
           <div className='modal-ticket-access__body--driver-info--content'>
-            <p>Nome <strong>{ticketSelected.driverName}</strong></p>
+            <p>Nome <strong>{ticketSelected.driver.name}</strong></p>
             <p>Veículo 
               <strong>
-                {ticketSelected.vehicleInfo.brand}&nbsp;&nbsp;
-                {ticketSelected.vehicleInfo.model}&nbsp;&nbsp;   
-                {ticketSelected.vehicleInfo.plate}
+                {ticketSelected.vehicle.brand}&nbsp;&nbsp;
+                {ticketSelected.vehicle.model}&nbsp;&nbsp;   
+                {ticketSelected.vehicle.plate}
               </strong>
             </p>
-            <p>Tipo de Serviço <strong>{ticketSelected.operationService}</strong></p>
+            <p>Tipo de Serviço <strong>{ticketSelected.service}</strong></p>
           </div>
         </div>
 
-        <div className='modal-ticket-access__body--vehicle-info'>
+        {/* <div className='modal-ticket-access__body--vehicle-info'>
+          
           <div className='modal-ticket-access__body--driver-info--title'>
             <div className='modal-ticket-access__body--driver-info--circle'></div>
             <h6 className='modal-ticket-access__body--driver-info--text'>
@@ -81,11 +82,8 @@ const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
               </div>
               <strong>{moment(ticketSelected.access.finalyDate).format('h:mm:ss')}</strong>
             </div>
-
-           
-
           </div>
-        </div>
+        </div> */}
 
       </div>
     </Body>

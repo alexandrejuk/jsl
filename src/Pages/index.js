@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 
 import Logged from './Logged'
 
@@ -8,6 +8,27 @@ class Pages extends Component {
     isLoading: false,
     isLogged: true,
   }
+
+  componentDidMount () {
+    this.shouldRedirect()
+  }
+
+  componentDidUpdate() {
+    this.shouldRedirect()
+  }
+
+  shouldRedirect = () => {
+    const { location: { pathname = '' }, history } = this.props
+
+    if (pathname.indexOf('/auth') !== -1) {
+      return 
+    }
+
+    if (!this.state.isLogged) {
+      history.push('/auth')
+    }
+  }
+
   render () {
     const {
       isLogged,
@@ -18,7 +39,7 @@ class Pages extends Component {
         <Route path='/logged' component={Logged}/>
         <Route path='/auth' component={() => 'auth login'}/>
         { 
-          isLogged ? 
+          false ? 
           <Redirect to='/logged/access/new' /> : 
           <Redirect to='/auth' />
         }
@@ -27,4 +48,4 @@ class Pages extends Component {
   } 
 }
  
-export default Pages
+export default withRouter(Pages)
