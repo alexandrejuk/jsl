@@ -7,6 +7,8 @@ import barcode from './icons/barcode.jpg'
 import storange from './icons/armazenamento.svg'
 import carga from './icons/carga.svg'
 import servico from './icons/servico.svg'
+import check from './icons/check.svg'
+import close from './icons/close.svg'
 
 export {
   Logo,
@@ -17,5 +19,7 @@ export {
   barcode,
   storange,
   carga,
-  servico
+  servico,
+  check,
+  close
 }

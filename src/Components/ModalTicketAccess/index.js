@@ -6,6 +6,30 @@ import moment from 'moment'
 
 const { Body } = Modal
 
+const statusOperationType = {
+  waiting_service: 'Entrada',
+  start_service: 'Início Operação',
+  ended_service: 'Fim Operação',
+  completed: 'Saída',
+  cancel: 'Cancelado'
+}
+
+const statusServiceType = {
+  loading: 'Carregar',
+  unload: 'Descarregar',
+  loading_unload: 'Carregar + Descarregar',
+}
+
+const ticketEvent = event => (
+  <div className='modal-ticket-access__body--access-info--content--item' key={event.id}>
+    <div className='modal-ticket-access__body--access-info--content--item-fx'>
+      <img className='modal-ticket-access__body--access-info--content-icon' src={clock} alt='img clock' /> 
+      <p>{statusOperationType[event.status]}</p>
+    </div>
+    <strong>{moment(event.startedAt).format('HH:mm:ss')}</strong>
+  </div>
+)
+
 const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
   <Modal
     show={show}
@@ -41,11 +65,11 @@ const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
                 {ticketSelected.vehicle.plate}
               </strong>
             </p>
-            <p>Tipo de Serviço <strong>{ticketSelected.service}</strong></p>
+            <p>Tipo de Serviço <strong>{statusServiceType[ticketSelected.service]}</strong></p>
           </div>
         </div>
 
-        {/* <div className='modal-ticket-access__body--vehicle-info'>
+        <div className='modal-ticket-access__body--vehicle-info'>
           
           <div className='modal-ticket-access__body--driver-info--title'>
             <div className='modal-ticket-access__body--driver-info--circle'></div>
@@ -54,36 +78,9 @@ const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
             </h6>
           </div>
           <div className='modal-ticket-access__body--access-info--content'>
-            <div className='modal-ticket-access__body--access-info--content--item'>
-              <div className='modal-ticket-access__body--access-info--content--item-fx'>
-                <img className='modal-ticket-access__body--access-info--content-icon' src={clock} alt='img clock' /> 
-                <p>Chegada</p>
-              </div>
-              <strong>{moment(ticketSelected.access.initialDate).format('h:mm:ss')}</strong>
-            </div>
-            <div className='modal-ticket-access__body--access-info--content--item'>
-              <div className='modal-ticket-access__body--access-info--content--item-fx'>
-                <img className='modal-ticket-access__body--access-info--content-icon' src={clock} alt='img clock' /> 
-                <p>Início Operação</p>
-              </div>
-              <strong>{moment(ticketSelected.access.initialOperationDate).format('h:mm:ss')}</strong>
-            </div>
-            <div className='modal-ticket-access__body--access-info--content--item'>
-              <div className='modal-ticket-access__body--access-info--content--item-fx'>
-                <img className='modal-ticket-access__body--access-info--content-icon' src={clock} alt='img clock' /> 
-                <p>Fim Operação</p>
-              </div>
-              <strong>{moment(ticketSelected.access.finalyOperationDate).format('h:mm:ss')}</strong>
-            </div>
-            <div className='modal-ticket-access__body--access-info--content--item'>
-              <div className='modal-ticket-access__body--access-info--content--item-fx'>
-                <img className='modal-ticket-access__body--access-info--content-icon' src={clock} alt='img clock' /> 
-                <p>Saída</p>
-              </div>
-              <strong>{moment(ticketSelected.access.finalyDate).format('h:mm:ss')}</strong>
-            </div>
+            {ticketSelected.ticketEvents.map(ticketEvent)}            
           </div>
-        </div> */}
+        </div>
 
       </div>
     </Body>

@@ -7,10 +7,12 @@
 .modal-ticket-access__body--access-info--content,
 .modal-ticket-access__header,
 .modal-ticket-access__body--driver-info--title,
-.modal-ticket-access__body--access-info--content--item,
 .modal-ticket-access__body--access-info--content--item-fx {
   display: flex;
   align-items: center;
+}
+.modal-ticket-access__body--access-info--content--item {
+  width: 50%;
 }
 .modal-ticket-access__header--title {
   color: #0E0E0E;
@@ -66,15 +68,14 @@ p.border-bottom-none {
   margin-left: 40px;
 }
 .modal-ticket-access__body--access-info--content {
-  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 10px;
-  justify-content: space-around;
   font-size: 0.8em;
   color: #333;  
 }
 .modal-ticket-access__body--access-info--content--item {
   margin: 10px 0;
   width: 50% !important;
-  justify-content: space-between;
+  display: flex;
+  justify-content: space-between
 }

@@ -1,0 +1,20 @@
+.modal-ticket-access-bar-code-card-body {
+  text-align: center;
+}
+
+.modal-ticket-access-bar-code {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 20px auto;
+
+}
+
+.modal-ticket-access-bar-code-image {
+  width: 100%;
+}
+
+.modal-ticket-access-bar-code-title {
+  text-align: center;
+}

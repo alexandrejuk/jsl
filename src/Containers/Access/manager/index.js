@@ -9,13 +9,13 @@ import Card from 'react-bootstrap/Card'
 import Table from 'react-bootstrap/Table'
 
 import ModalTicketAccess from '../../../Components/ModalTicketAccess'
-import ModalTicketAccessBarCode from '../../../Components/ModalTicketAccessBarCode'
+import ModalTicketAcessCancel from '../../../Components/ModalTicketAcessCancel'
+import ModalTicketAcessFinaly from '../../../Components/ModalTicketAcessFinaly'
 
 class Manager extends Component {
 
   state = {
     showModal: false,
-    showModalBarCode: false,
     ticketSelected: {
       id: null,
       barCode: null,
@@ -49,30 +49,68 @@ class Manager extends Component {
         createdAt: null,
         updatedAt: null,
         companyId: null,
-      }
-    } 
+      },
+      ticketEvents: []
+    },
+    showModalCancel: false,
+    showModalFinaly: false
   }
 
   handleShowModal = (ticketSelected = {}) => {
     this.setState({ showModal: !this.state.showModal, ticketSelected })
   }
+
   handleCloseModal = () => {
     this.setState({ showModal: !this.state.showModal })
   }
 
-  handleShowModalBarCode = (ticketSelected = {}) => {
-    this.setState({ showModalBarCode: !this.state.showModalBarCode })
+  handleCloseModalCancel = () => {
+    this.setState({ showModalCancel: !this.state.showModalCancel })
   }
 
+  handleShowModalCancel = (ticketSelected = {}) => {
+    this.setState({ showModalCancel: !this.state.showModalCancel, ticketSelected })
+  }
+
+  handleShowModalFinaly = (ticketSelected = {}) => {
+    this.setState({ showModalFinaly: !this.state.showModalFinaly, ticketSelected })
+  }
+  
+  handleCloseModalFinaly = () => {
+    this.setState({ showModalFinaly: !this.state.showModalFinaly })
+  }
+
+  statusOperationType = {
+    waiting_service: 'Entrada',
+    start_service: 'Início Operação',
+    ended_service: 'Fim Operação',
+    completed: 'Concluído',
+    cancel: 'Cancelado'
+  }
+
+  statusOperationColor = {
+    waiting_service: 'secondary',
+    start_service: 'warning',
+    ended_service: 'info',
+    completed: 'success',
+    cancel: 'danger',
+  }
+
+  statusServiceType = {
+    loading: 'Carregar',
+    unload: 'Descarregar',
+    loading_unload: 'Carregar + Descarregar',
+  }
   renderTicket = ticket => (
     <tr key={ticket.id}>
       <td>{ticket.barCode}</td>
       <td>{ticket.driver.name}</td>
-      <td>{ticket.service}</td>
-      <td>{ticket.vehicle.model} - {ticket.vehicle.plate}</td>
+      <td>{this.statusServiceType[ticket.service]}</td>
+      <td>Doca {ticket.docaNumber}</td>
+      <td>{ticket.operation.description}</td>
       <td>
-        <Badge pill variant='success'>
-          {ticket.status}
+        <Badge className="size-budge-custom" variant={this.statusOperationColor[ticket.status]}>
+          {this.statusOperationType[ticket.status]}
         </Badge>
       </td>
       <td>
@@ -89,23 +127,35 @@ class Manager extends Component {
               <i className="fa fa-print" aria-hidden="true"></i>
             </Button>
           </Link>
-          <Button className="magitn-button" variant="outline-info" onClick={this.handleShowModalBarCode}>
-            <i className="fa fa-barcode" aria-hidden="true"></i>
-          </Button>
-          <Button className="magitn-button" variant="outline-danger">
-            <i className="fa fa-times" aria-hidden="true"></i>
-          </Button>
-          <Button className="magitn-button" variant="outline-success">
-            <i className="fa fa-check" aria-hidden="true"></i>
-          </Button>
+          {
+            ticket.status === 'waiting_service'? 
+            <Button 
+              className="magitn-button" 
+              variant="outline-danger"
+              onClick={() => this.handleShowModalCancel(ticket)}
+            >
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </Button> : null
+          }
+          {
+            ticket.status === 'ended_service' ? 
+            <Button 
+              className="magitn-button" 
+              variant="outline-success" 
+              onClick={() => this.handleShowModalFinaly(ticket)}
+            >
+              <i className="fa fa-check" aria-hidden="true"></i>
+            </Button> : null
+          }
         </ButtonToolbar>
       </td>
     </tr>
   )
 
   render() {
-    const { ticketSelected, showModal, showModalBarCode } = this.state
+    const { ticketSelected, showModal, showModalCancel, showModalFinaly } = this.state
     const { ticketList } = this.props
+
     return (
       <Container>
         <Card className='card-margin'>
@@ -117,6 +167,7 @@ class Manager extends Component {
                   <th>TicketId</th>
                   <th>Motorista</th>
                   <th>Serviço</th>
+                  <th>Doca</th>
                   <th>Operação</th>
                   <th>Status</th>
                   <th>Ações</th>
@@ -130,10 +181,19 @@ class Manager extends Component {
               show={showModal} 
               ticketSelected={ticketSelected} 
               handleCloseModal={this.handleCloseModal}/>
-            <ModalTicketAccessBarCode 
-              show={showModalBarCode} 
-              handleShowModal={this.handleShowModalBarCode}
-            />
+
+              <ModalTicketAcessCancel 
+                show={showModalCancel} 
+                ticket={ticketSelected} 
+                handleCloseModalCancel={this.handleCloseModalCancel}
+                handleCancelTicket={this.props.handleCancelTicket}
+              />
+              <ModalTicketAcessFinaly 
+                 show={showModalFinaly} 
+                 ticket={ticketSelected} 
+                 handleCloseModalFinaly={this.handleCloseModalFinaly}
+                 handleFinalyTicket={this.props.handleFinalyTicket}
+              />
           </Card.Body>
         </Card>
       </Container>

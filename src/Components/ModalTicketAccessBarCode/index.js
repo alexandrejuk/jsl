@@ -18,6 +18,7 @@ class ModalTicketAccessBarCode extends Component {
 
   handleClick = () => {
     this.props.handleUpdateDoca(this.state.barCode)
+    this.setState({ barCode: '' })
   }
 
   render() {

@@ -4,17 +4,31 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import './index.css'
 import { storange, carga, servico  } from '../../assets'
+import moment from 'moment'
 
 class CardDoca extends Component {
+
+  state = {
+    time: null
+  }
+
+  startTime = () => {
+    setInterval(() => {
+      const startTimestamp = moment().startOf('day')
+      startTimestamp.add(1, 'second')
+      startTimestamp.format('HH:mm:ss')
+      this.setState({ time: startTimestamp })
+    }, 1000)
+  }
   render() {
     const { 
       doca, 
-      ticket = null, 
       show, 
       handleSelectDoca, 
       handleShowModalBarCode,
       handleUpdateDoca
     } = this.props
+    const ticket = doca.tickets.find(ticket => ticket.status === 'start_service')
     return (
       <>
       <ModalTicketAccessBarCode 
@@ -61,7 +75,7 @@ class CardDoca extends Component {
                 </div>
                 <div className=' operation line-top'></div>
                 <div className='card-doca__body--item'>
-                  tempo 0:989
+                  tempo 
                 </div>
 
             <div className='card-doca__body--item operation-btn'>

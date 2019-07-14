@@ -20,6 +20,21 @@ class Manager extends Component {
       .then(({ data: ticketList }) => this.setState({ ticketList }))
   }
 
+  handleFinalyTicket = async (barCode, docaId) => {
+    await this.ticketService.updateTicket({
+      docaId,
+      barCode
+    })
+    this.handleListTickets()
+  }
+
+  handleCancelTicket = async (barCode) => {
+    await this.ticketService.updateTicket({
+      barCode
+    })
+    this.handleListTickets()
+  }
+
   render() {
     const {
       isLoading,
@@ -30,6 +45,8 @@ class Manager extends Component {
       <ManagerContainer 
         ticketList={ticketList}
         isLoading={isLoading}
+        handleCancelTicket={this.handleCancelTicket}
+        handleFinalyTicket={this.handleFinalyTicket}
       />
     )
   }
