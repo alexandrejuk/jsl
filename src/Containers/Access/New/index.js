@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
-import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import { Banner_1 } from '../../../assets/'
 import './index.css'
@@ -139,10 +138,10 @@ class New extends Component {
                     </Form.Group>
     
                     <Form.Group as={Col} controlId="formGridModel">
-                      <Form.Label>Marca/Modelo</Form.Label>
+                      <Form.Label>Modelo</Form.Label>
                       <Form.Control 
                         type="text"
-                        placeholder="insira a marca e modelo" 
+                        placeholder="insira o modelo" 
                         name="model"
                         onChange={this.handlerFormTicket}
                       />

@@ -5,21 +5,41 @@ import TicketService from '../../../../services/ticket'
 class Ticket extends Component {
   ticketService = null
   state = {
-    ticketData: {
+    ticketData:  {
       id: null,
-      driverName: null,
-      documentId: null,
-      cpf: null,
-      vehicleInfo: {
-        plate: null,
-        brand: null,
-        model: null,
-      },
-      securityCode: null,
+      barCode: null,
       status: null,
-      ticketId: null,
-      createdTicketDate: null,
-      operationService: null,
+      service: null,
+      createdAt: null,
+      updatedAt: null,
+      companyId: null,
+      operationId: null,
+      driverId: null,
+      vehicleId: null,
+      driver: {
+        id: null,
+        name: null,
+        documentId: null,
+        cpf: null,
+        createdAt: null,
+        updatedAt: null,
+      },
+      vehicle: {
+        id: null,
+        model: null,
+        brand: null,
+        plate: null,
+        createdAt: null,
+        updatedAt: null,
+      },
+      operation: {
+        id: null,
+        description: null,
+        createdAt: null,
+        updatedAt: null,
+        companyId: null,
+      },
+      ticketEvents: []
     },
     isLoading: false,
   }
@@ -30,12 +50,14 @@ class Ticket extends Component {
     this.handleTicket()
   }
 
-  handleTicket = () => {
-    const id = Number(this.props.match.params.id)
-    this.ticketService
-      .ticketId(id)
-      .then(({ data: ticketData }) => this.setState({ ticketData }))
-
+  handleTicket = async () => {
+    try {
+      const id = this.props.match.params.id
+      const { data: ticketData } = await this.ticketService.ticketId(id)
+      this.setState({ ticketData })
+    } catch (error) {
+      console.log('error')
+    }
   }
 
   handlePrint = () => {

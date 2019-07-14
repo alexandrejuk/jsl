@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import DocaContainer from '../../../../Containers/Access/Doca'
 import DocaService from '../../../../services/doca'
 import TicketService from '../../../../services/ticket'
+import Notiflix from 'notiflix-react'
 
 class Doca extends Component {
   docaService = null
@@ -16,25 +17,38 @@ class Doca extends Component {
     this.docaService = new DocaService()
     this.ticketService = new TicketService()
     this.handleDocas()
+    Notiflix.Notify.Init({
+      width:'300px',
+      position:'right-top',
+      distance:'15px',
+    })
   }
 
   handleShowModalBarCode = () => {
     this.setState({ show: !this.state.show })
   }
 
-  handleDocas() {
-    this.docaService.docas()
-      .then(({ data: docas }) => this.setState({ docas }))
+  async handleDocas() {
+    try {
+      const { data: docas } = await this.docaService.docas()
+      this.setState({ docas })    
+    } catch (error) {
+       Notiflix.Notify.Failure('Não foi recuperar as Docas!')
+       
+    }
   }
  
   handleUpdateDoca = async (barCode) => {
-    const { selectDoca: docaId } = this.state
-
-    await this.ticketService.updateTicket({
-      docaId,
-      barCode
-    })
-    this.setState({ show: false }, this.handleDocas)
+    try {
+      const { selectDoca: docaId } = this.state
+      const { data } = await this.ticketService.updateTicket({ docaId, barCode })
+      if(!data) {
+        Notiflix.Notify.Failure('Não ticket pode ser iníciao para a doca selecionada!')
+      }
+      this.setState({ show: false }, this.handleDocas)
+    } catch (error) {
+       Notiflix.Notify.Failure('Não ticket pode ser iníciao para a doca selecionada!')
+    }
   }
 
   handleSelectDoca = selectDoca => {

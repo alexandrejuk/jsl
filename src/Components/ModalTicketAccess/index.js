@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import { pack, clock } from '../../assets'
 import Modal from 'react-bootstrap/Modal'
+import Badge from 'react-bootstrap/Badge'
 import moment from 'moment'
 
 const { Body } = Modal
@@ -10,7 +11,7 @@ const statusOperationType = {
   waiting_service: 'Entrada',
   start_service: 'Início Operação',
   ended_service: 'Fim Operação',
-  completed: 'Saída',
+  completed: 'Concluído',
   cancel: 'Cancelado'
 }
 
@@ -29,6 +30,15 @@ const ticketEvent = event => (
     <strong>{moment(event.startedAt).format('HH:mm:ss')}</strong>
   </div>
 )
+
+
+const statusOperationColor = {
+  waiting_service: 'secondary',
+  start_service: 'warning',
+  ended_service: 'info',
+  completed: 'success',
+  cancel: 'danger',
+}
 
 const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
   <Modal
@@ -66,6 +76,12 @@ const ModalTicketAccess = ({ show, ticketSelected, handleCloseModal }) => (
               </strong>
             </p>
             <p>Tipo de Serviço <strong>{statusServiceType[ticketSelected.service]}</strong></p>
+            <p>Status
+              <strong>
+              <Badge className="size-budge-modal-custom" variant={statusOperationColor[ticketSelected.status]}>
+                {statusOperationType[ticketSelected.status]}
+              </Badge>
+              </strong></p>
           </div>
         </div>
 

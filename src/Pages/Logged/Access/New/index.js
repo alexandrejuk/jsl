@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import NewContainer from '../../../../Containers/Access/New'
 import TicketService from '../../../../services/ticket'
-import { Redirect } from 'react-router-dom'
-import OperationService from '../../../../services/operation';
+import OperationService from '../../../../services/operation'
+import Notiflix from 'notiflix-react'
 
 class New extends Component {
   ticketService = null
@@ -11,8 +11,6 @@ class New extends Component {
 
   state = {
     isLoading: false,
-    redirect: false,
-    ticketId: null,
     operationList: []
   }
 
@@ -20,59 +18,69 @@ class New extends Component {
     this.ticketService = new TicketService()
     this.operationService = new OperationService()
     this.handleOperations()
+    
+    Notiflix.Notify.Init({
+      width:'300px',
+      position:'right-top',
+      distance:'15px',
+    })
+  }
+
+  checkIsEmpty = (value, message) => {
+    if(!value) {
+      return Notiflix.Notify.Failure(message)
+    }
+    return value
   }
 
   parserDateForm = value => ({
     driver: {
-      name: value.name,
-      documentId: value.documentId,
-      cpf: value.cpf,
+      name: this.checkIsEmpty(value.name, 'Preencha o campo nome!'),
+      documentId: this.checkIsEmpty(value.documentId, 'Preencha o campo RG!'),
+      cpf: this.checkIsEmpty(value.cpf, 'Preencha o campo CPF!'),
     },
-    operationId: value.operationId,
-    service: value.service,
+    operationId: this.checkIsEmpty(value.operationId, 'Selecione a Operação!'),
+    service: this.checkIsEmpty(value.service, 'Selecione o Serviço!'), 
     vehicle: {
-      plate: value.plate,
-      brand: value.brand,
-      model: value.model,
+      plate: this.checkIsEmpty(value.plate, 'Preencha o campo Placa do Veículo!'),  
+      brand: this.checkIsEmpty(value.brand, 'Selecione a Fabricante do Veículo!'),
+      model: this.checkIsEmpty(value.model, 'Preencha o campo Modelo do Veículo!'),
     },
     status: this.initialStatus,
     docaId: null,
-    barCode: '123'
+    barCode: '1234'
   })
 
-  handleOperations() {
-    this.operationService
-      .operations()
-      .then(({ data: operationList }) => this.setState({ operationList }))
+  async handleOperations() {
+    try {
+      const { data: operationList } = await this.operationService.operations()
+      this.setState({ operationList })
+    } catch (error) {
+      Notiflix.Notify.Failure('Não foi recuperar as operações!')
+    }
   }
-  saveNewTicket = value => {
-    this.ticketService
-      .saveTicket(this.parserDateForm(value))
-      .then(({ data }) => {
-        this.setState({ ticketId: data.id, redirect: true })
-      })
+  saveNewTicket = async value => {
+    const { history } = this.props
+    try {
+      const { data } = await this.ticketService.saveTicket(this.parserDateForm(value))
+      Notiflix.Notify.Success('Ticket criado com sucesso!')
+      history.push(`/logged/access/ticket/${data.id}`)
+    } catch (error) {
+      Notiflix.Notify.Failure('Não foi possível criar um ticket!')
+    }
   }
 
   render() {
     const { 
-      isLoading, 
-      ticketId, 
-      redirect,
+      isLoading,
       operationList
     } = this.state
     return (
-      <>
-        <NewContainer 
-          handleSubmit={this.saveNewTicket}
-          isLoading={isLoading}
-          operationList={operationList}
-        />
-        {
-          redirect ? 
-          <Redirect to={`/logged/access/ticket/${ticketId}`} /> : 
-          null
-        }
-      </>
+      <NewContainer 
+        handleSubmit={this.saveNewTicket}
+        isLoading={isLoading}
+        operationList={operationList}
+      />
     ) 
   }
 }

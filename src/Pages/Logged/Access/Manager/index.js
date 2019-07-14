@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ManagerContainer from '../../../../Containers/Access/manager'
 import TicketService from '../../../../services/ticket'
+import Notiflix from 'notiflix-react'
 
 class Manager extends Component {
   ticketService = null
@@ -12,27 +13,40 @@ class Manager extends Component {
   componentDidMount() {
     this.ticketService = new TicketService()
     this.handleListTickets()
+    Notiflix.Notify.Init({
+      width:'300px',
+      position:'right-top',
+      distance:'15px',
+    })
   }
 
-  handleListTickets = () => {
-    this.ticketService
-      .tickets()
-      .then(({ data: ticketList }) => this.setState({ ticketList }))
+  handleListTickets = async () => {
+    try {
+      const { data: ticketList } = await this.ticketService.tickets()
+      this.setState({ ticketList })
+    } catch (error) {
+      Notiflix.Notify.Failure('Não foi possível recuperar os Tickets!')    
+    }
   }
 
   handleFinalyTicket = async (barCode, docaId) => {
-    await this.ticketService.updateTicket({
-      docaId,
-      barCode
-    })
-    this.handleListTickets()
+    try {
+      await this.ticketService.updateTicket({ docaId, barCode })
+      this.handleListTickets()
+      Notiflix.Notify.Success('Ticket concluído com sucesso!')
+    } catch (error) {
+      Notiflix.Notify.Failure('Não foi possível concluir o Ticket!')
+    }
   }
 
   handleCancelTicket = async (barCode) => {
-    await this.ticketService.updateTicket({
-      barCode
-    })
-    this.handleListTickets()
+    try {
+      await this.ticketService.updateTicket({ barCode })
+      this.handleListTickets()
+      Notiflix.Notify.Success('Ticket cancelado com sucesso!')
+    } catch (error) {
+      Notiflix.Notify.Failure('Não foi possível cancelar o Ticket!')
+    }
   }
 
   render() {

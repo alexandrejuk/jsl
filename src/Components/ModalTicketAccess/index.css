@@ -79,3 +79,8 @@ p.border-bottom-none {
   display: flex;
   justify-content: space-between
 }
+
+.size-budge-modal-custom {
+  width: 125px !important;
+  font-size: 1em;
+}
