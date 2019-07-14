@@ -1,0 +1,56 @@
+.wrapper-login {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-auth {
+  background-color: #fff;
+  width: 50%;
+}
+
+.info-auth {
+  background-color: #E4E9FF;
+  width: 50%;
+}
+
+.logo-company-login {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.logo-company-login-img {
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-info {
+  margin: auto;
+  text-align: center;
+  color: #2E3047;
+}
+.form-login {
+  margin: 40px auto;
+}
+
+.form-margin-login {
+  margin: auto;
+}
+.button-login-form {
+  width: 100%;
+  margin: auto;
+}
+.info-auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.info-image-auth {
+  text-align: center;
+}
+.info-auth-login-text {
+  margin: auto;
+  width: 70%;
+}

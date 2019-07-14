@@ -9,6 +9,7 @@ import carga from './icons/carga.svg'
 import servico from './icons/servico.svg'
 import check from './icons/check.svg'
 import close from './icons/close.svg'
+import Info from './images/info.png'
 
 export {
   Logo,
@@ -21,5 +22,6 @@ export {
   carga,
   servico,
   check,
-  close
+  close,
+  Info
 }

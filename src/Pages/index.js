@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 
 import Logged from './Logged'
+import Login from './Login'
 
 class Pages extends Component {
   state = {
@@ -37,7 +38,7 @@ class Pages extends Component {
     return (
       <Switch>
         <Route path='/logged' component={Logged}/>
-        <Route path='/auth' component={() => 'auth login'}/>
+        <Route path='/auth' component={Login}/>
         { 
           false ? 
           <Redirect to='/logged/access/new' /> : 
