@@ -45,7 +45,7 @@ const Login = () => (
         <p>Controle, rapidez e qualidade para o gerenciamento de suas operações.</p>
       </div>
       <div className='info-image-auth'>
-        <img src={Info}  />
+        <img src={Info}  alt='flat marketing' />
       </div>
     </div>
   </div>

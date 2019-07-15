@@ -72,10 +72,8 @@ class New extends Component {
     const { form } = this.state
     const { operationList } = this.props
     return (
-      <>
-        <img style={{ width: '100%'}} src={Banner_1} alt='banner-1' />
         <Container>
-          <Card className='card-position-access'>
+          <Card className='card-margin-ticket'>
             <Card.Body>
               <Card.Title>Ticket Acesso</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
@@ -218,7 +216,6 @@ class New extends Component {
             </Card.Body>
           </Card>
         </Container>
-      </>
     )
   }
 } 

@@ -21,6 +21,7 @@ const NarBar = () => (
           </NavDropdown>
           <NavDropdown title="DOCA&nbsp;" id="nav-dropdown" className='navbar-jsl-item navbar-jsl-item-link'>
             <NavDropdown.Item href="#logged/doca/new" eventKey="4.1" className='navbar-jsl-item-link'>NOVA</NavDropdown.Item>
+            <NavDropdown.Item href="#logged/doca/painel" eventKey="4.2"className='navbar-jsl-item-link'>PAINEL</NavDropdown.Item>
             <NavDropdown.Item href="#logged/doca/manager" eventKey="4.2"className='navbar-jsl-item-link'>GERENCIAR</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown title="OPERAÇÃO&nbsp;" id="nav-dropdown" className='navbar-jsl-item navbar-jsl-item-link'>

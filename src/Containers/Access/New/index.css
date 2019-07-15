@@ -1,6 +1,5 @@
-.card-position-access {
-  position: relative;
-  top: -40px;
+.card-margin-ticket {
+  margin: 20px 0;
 }
 .alert-info-form {
   font-size: .8em;

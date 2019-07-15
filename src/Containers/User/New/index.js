@@ -30,7 +30,7 @@ class New extends Component {
   isEmpty(values) {
     let fields = [];
     for(let key in values) {
-      if(values[key] && values[key].length >= 4) {
+      if(values[key] && values[key].length >= 3) {
         fields = [...fields, { field: true }]
       }else {
         fields = [...fields, { field: false}]
