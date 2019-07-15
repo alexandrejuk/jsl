@@ -82,7 +82,7 @@ class New extends Component {
                   { clicked && !form.email? <span className='alert-info-form'>x campo obrigatório!</span> : null}     
                 </Col>
                 <Col className='form-margin-staff' sm={12}>
-                  <Form.Label>Nome do Usuário</Form.Label>
+                  <Form.Label>Login</Form.Label>
                 </Col>
                 <Col className='form-margin-staff' sm={12}>
                   <Form.Control name='userName' type="text" placeholder="insira o nome do usuário"  onChange={this.handlerFormStaff}/>

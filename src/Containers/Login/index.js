@@ -20,7 +20,7 @@ const Login = () => (
             <Form.Label>Usuário</Form.Label>
           </Col>
           <Col className='form-margin-login' sm={8}>
-            <Form.Control type="text" placeholder="Ususário" />          
+            <Form.Control type="text" placeholder="Usuário" />          
           </Col>
         </Form.Group>
 
