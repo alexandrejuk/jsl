@@ -36,7 +36,7 @@ class New extends Component {
   isEmpty(values) {
     let fields = [];
     for(let key in values) {
-      if(values[key] && values[key].length >= 7) {
+      if(values[key] && values[key].length >=4) {
         fields = [...fields, { field: true }]
       }else {
         fields = [...fields, { field: false}]
@@ -57,6 +57,7 @@ class New extends Component {
   sendFormDate = () => {
     const { form } = this.state
     const valid = this.isEmpty(form)
+    console.log('-----', valid)
     
     if(valid) {
       this.props.handleSubmit(form)

@@ -68,8 +68,8 @@ class New extends Component {
                   <Form.Label>Descrição</Form.Label>
                 </Col>
                 <Col className='form-margin-operation' sm={12}>
-                  <Form.Control name='name' type="text" placeholder="insira o nome da operação"  onChange={this.handlerFormOperation}/>
-                  { clicked && !form.name? <span className='alert-info-form'>x campo obrigatório!</span> : null}     
+                  <Form.Control name='description' type="text" placeholder="insira o nome da operação"  onChange={this.handlerFormOperation}/>
+                  { clicked && !form.description? <span className='alert-info-form'>x campo obrigatório!</span> : null}     
                 </Col>
                 <Col className='form-margin-operation' sm={12}>
                   <Button  variant='outline-primary' onClick={this.clickFormSend}>

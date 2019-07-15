@@ -21,7 +21,7 @@ class Manager extends Component {
 
   renderDoca = doca => (
     <tr key={doca.id}>
-      <td>{doca.name} {doca.number} </td>
+      <td>{doca.description} {doca.docaNumber} </td>
       <td>
         <Badge className="size-budge-custom" variant={this.statusDocaColor[doca.status]}>
           {this.statusDocaType[doca.status]}

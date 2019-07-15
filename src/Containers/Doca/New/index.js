@@ -10,8 +10,9 @@ class New extends Component {
 
   state = {
     form: {
-      name: 'Doca',
+      description: 'Doca',
       docaNumber: null,
+      status: 'available',
     },
     clicked: false
   }
@@ -48,7 +49,7 @@ class New extends Component {
 
   sendFormDate = () => {
     const { form } = this.state
-    if(this.state.docaNumber > 0) {
+    if(this.state.form.docaNumber > 0) {
       this.props.handleSubmit(form)
     }
   }
@@ -68,7 +69,10 @@ class New extends Component {
                   <Form.Label>Descrição</Form.Label>
                 </Col>
                 <Col className='form-margin-doca' sm={12}>
-                  <Form.Control name='name' type="text" value='Doca'readOnly={true}/> 
+                  <Form.Control name='description' type="text" value='Doca'readOnly={true}/> 
+                </Col>
+                <Col className='form-margin-doca' sm={12}>
+                  <Form.Label>Número da doca</Form.Label>
                 </Col>
                 <Col className='form-margin-doca' sm={12}>
                   <Form.Control
@@ -76,7 +80,7 @@ class New extends Component {
                     type="number"
                     placeholder="insira o número da doca"
                     onChange={this.handlerFormDoca}/>
-                  { clicked && !form.name? <span className='alert-info-form'>x campo obrigatório!</span> : null}     
+                  { clicked && !form.docaNumber? <span className='alert-info-form'>x campo obrigatório!</span> : null}     
                 </Col>
                 <Col className='form-margin-doca' sm={12}>
                   <Button  variant='outline-primary' onClick={this.clickFormSend}>
