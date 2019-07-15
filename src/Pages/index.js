@@ -31,19 +31,10 @@ class Pages extends Component {
   }
 
   render () {
-    const {
-      isLogged,
-    } = this.state
-
     return (
       <Switch>
         <Route path='/logged' component={Logged}/>
         <Route path='/auth' component={Login}/>
-        { 
-          false ? 
-          <Redirect to='/logged/access/new' /> : 
-          <Redirect to='/auth' />
-        }
       </Switch>
     ) 
   } 

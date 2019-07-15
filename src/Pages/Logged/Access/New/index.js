@@ -35,16 +35,16 @@ class New extends Component {
 
   parserDateForm = value => ({
     driver: {
-      name: this.checkIsEmpty(value.name, 'Preencha o campo nome!'),
-      documentId: this.checkIsEmpty(value.documentId, 'Preencha o campo RG!'),
-      cpf: this.checkIsEmpty(value.cpf, 'Preencha o campo CPF!'),
+      name: value.name,
+      documentId: value.documentId,
+      cpf: value.cpf,
     },
-    operationId: this.checkIsEmpty(value.operationId, 'Selecione a Operação!'),
-    service: this.checkIsEmpty(value.service, 'Selecione o Serviço!'), 
+    operationId: value.operationId,
+    service: value.service,
     vehicle: {
-      plate: this.checkIsEmpty(value.plate, 'Preencha o campo Placa do Veículo!'),  
-      brand: this.checkIsEmpty(value.brand, 'Selecione a Fabricante do Veículo!'),
-      model: this.checkIsEmpty(value.model, 'Preencha o campo Modelo do Veículo!'),
+      plate: value.plate,
+      brand: value.brand,
+      model: value.model,
     },
     status: this.initialStatus,
     docaId: null,

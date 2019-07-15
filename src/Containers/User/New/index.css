@@ -1,0 +1,13 @@
+.form-margin-staff {
+  margin-top: 10px;
+}
+.form-staff {
+  margin: auto;
+  width: 420px;
+}
+.card-form-staff {
+  margin-top: 20px;
+}
+.no-padding {
+  padding: 0 !important;
+}

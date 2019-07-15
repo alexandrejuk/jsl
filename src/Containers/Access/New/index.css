@@ -2,3 +2,11 @@
   position: relative;
   top: -40px;
 }
+.alert-info-form {
+  font-size: .8em;
+  color: red;
+}
+
+.text-left {
+  text-align: left;
+}

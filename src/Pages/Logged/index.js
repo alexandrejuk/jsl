@@ -7,6 +7,9 @@ import CopyRight from '../../Components/Copyright'
 import Footer from '../../Components/Footer'
 
 import Access from './Access'
+import User from './User'
+import Operation from './Operation'
+import Doca from './Doca'
 
 const Logged = () => (
   <Fragment>
@@ -15,6 +18,9 @@ const Logged = () => (
     </Container>
     <Switch>
       <Route path='/logged/access' component={Access} />
+      <Route path='/logged/user' component={User} />
+      <Route path='/logged/operation' component={Operation} />
+      <Route path='/logged/doca' component={Doca} />
     </Switch>
     <Container fluid={true} style={{ margion: '0', padding: '0' }}>
       <CopyRight />

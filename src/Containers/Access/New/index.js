@@ -10,23 +10,57 @@ import './index.css'
 class New extends Component {
 
   state = {
-    driverName: null,
-    documentId: null,
-    cpf: null,
-    plate: null,
-    brand: null,
-    model: null,
+    form: {
+      name: null,
+      documentId: null,
+      cpf: null,
+      plate: null,
+      brand: null,
+      model: null,
+      service: null,
+      operationId: null,
+    },
+    clicked: false,
   }
 
   handlerFormTicket = (e) => {
     const { name, value } = e.target
     this.setState({
-      [name]: value
+      form: {
+        ...this.state.form,
+        [name]: value
+      }
     })
   }
 
+  isEmpty(values) {
+    let fields = [];
+    for(let key in values) {
+      if(values[key] && values[key].length >= 7) {
+        fields = [...fields, { field: true }]
+      }else {
+        fields = [...fields, { field: false}]
+      }
+    }
+
+    if(fields.find(v => !v.field)) {
+      return false;
+    }else {
+      return true;
+    }
+  }
+
+  clickFormSend = () => {
+    this.setState({ clicked: true }, this.sendFormDate)
+  }
+
   sendFormDate = () => {
-    this.props.handleSubmit(this.state)
+    const { form } = this.state
+    const valid = this.isEmpty(form)
+    
+    if(valid) {
+      this.props.handleSubmit(form)
+    }
   }
 
   renderOperation = ({ id, description }) => (
@@ -35,6 +69,7 @@ class New extends Component {
     </option>
   )
   render() {
+    const { form } = this.state
     const { operationList } = this.props
     return (
       <>
@@ -56,6 +91,8 @@ class New extends Component {
                       <option>Escolha a Operação</option>
                       {operationList.map(this.renderOperation)}
                     </Form.Control>
+                   { 
+                     this.state.clicked && !form.operationId ? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                   </Form.Group>
                   <Form.Group as={Col}>
                     <Form.Label>Tipo de Serviço</Form.Label>
@@ -85,6 +122,10 @@ class New extends Component {
                         onChange={this.handlerFormTicket}
                       />
                     </Col>
+                    { 
+                      this.state.clicked && !form.service 
+                      ? <span className='alert-info-form'>x campo obrigatório!</span> : null
+                    }
                   </Form.Group>
                   </Form.Row>
                 </Form>
@@ -102,6 +143,7 @@ class New extends Component {
                         name="name" 
                         onChange={this.handlerFormTicket}
                       />
+                     { this.state.clicked && !form.name? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridDocumentId">
@@ -112,6 +154,7 @@ class New extends Component {
                         name="documentId" 
                         onChange={this.handlerFormTicket}
                       />
+                     { this.state.clicked && !form.documentId? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridDocumentId">
@@ -122,6 +165,7 @@ class New extends Component {
                         name="cpf"
                         onChange={this.handlerFormTicket}
                       />
+                     { this.state.clicked && !form.cpf? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                     </Form.Group>
                   </Form.Row>
 
@@ -135,6 +179,7 @@ class New extends Component {
                         name="plate"
                         onChange={this.handlerFormTicket}
                       />
+                     { this.state.clicked && !form.plate? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                     </Form.Group>
     
                     <Form.Group as={Col} controlId="formGridModel">
@@ -145,6 +190,7 @@ class New extends Component {
                         name="model"
                         onChange={this.handlerFormTicket}
                       />
+                     { this.state.clicked && !form.model? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                     </Form.Group>
     
                     <Form.Group as={Col} controlId="formGridFabric">
@@ -159,10 +205,11 @@ class New extends Component {
                         <option value="GM">GM</option>
                         <option value="VOLVO">VOLVO</option>
                       </Form.Control>
+                     { this.state.clicked && !form.brand? <span className='alert-info-form'>x campo obrigatório!</span> : null}
                     </Form.Group>
                   </Form.Row>
 
-                  <Button  variant='outline-primary' onClick={this.sendFormDate}>
+                  <Button  variant='outline-primary' onClick={this.clickFormSend}>
                     Check-in
                   </Button>
 
