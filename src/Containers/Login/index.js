@@ -17,10 +17,10 @@ const Login = () => (
       <Form className='form-login'>
         <Form.Group controlId="formBasicEmail">
           <Col className='form-margin-login' sm={8}>
-            <Form.Label>Email</Form.Label>
+            <Form.Label>Usuário</Form.Label>
           </Col>
           <Col className='form-margin-login' sm={8}>
-            <Form.Control type="email" placeholder="Enter email" />          
+            <Form.Control type="text" placeholder="Ususário" />          
           </Col>
         </Form.Group>
 
