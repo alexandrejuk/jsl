@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 import Logged from './Logged'
 import Login from './Login'
@@ -7,7 +7,6 @@ import Login from './Login'
 class Pages extends Component {
   state = {
     isLoading: false,
-    isLogged: true,
   }
 
   componentDidMount () {
@@ -20,12 +19,12 @@ class Pages extends Component {
 
   shouldRedirect = () => {
     const { location: { pathname = '' }, history } = this.props
-
+    const token = localStorage.getItem('token')
     if (pathname.indexOf('/auth') !== -1) {
       return 
     }
 
-    if (!this.state.isLogged) {
+    if (!token) {
       history.push('/auth')
     }
   }

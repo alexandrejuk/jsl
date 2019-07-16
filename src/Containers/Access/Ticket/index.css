@@ -22,7 +22,7 @@ p {
   content: '';
   background: #FFF;
   max-width: 427px;
-  height: 560px;
+  min-height: 500px;
   border: 1px solid #666;
 }
 .card-header-ticket {

@@ -1,5 +1,6 @@
 .card-margin-ticket {
   margin: 20px 0;
+  min-height: 500px;
 }
 .alert-info-form {
   font-size: .8em;

@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { Banner_1 } from '../../../assets/'
 import './index.css'
 
 class New extends Component {

@@ -5,6 +5,10 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
 
+const logout = () => {
+  localStorage.clear()
+}
+
 const NarBar = () => (
   <nav className='no-print'>
     <div className="header-company">
@@ -33,7 +37,7 @@ const NarBar = () => (
             <NavDropdown.Item href="#logged/user/manager" eventKey="4.2"className='navbar-jsl-item-link'>GERENCIAR</NavDropdown.Item>
           </NavDropdown>
           <Nav.Item className='navbar-jsl-item'>
-            <Nav.Link eventKey="1" href="#auth" className='navbar-jsl-item-link'>
+            <Nav.Link eventKey="1" href="#auth" className='navbar-jsl-item-link' onClick={logout}>
               SAIR
             </Nav.Link>
           </Nav.Item>

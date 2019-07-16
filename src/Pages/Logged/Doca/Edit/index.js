@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import NewContainer from '../../../../Containers/User/New'
+import NewContainer from '../../../../Containers/Doca/New'
+import DocaService from '../../../../services/doca'
+
 import Notiflix from 'notiflix-react'
-import UserService from '../../../../services/user'
 class New extends Component {
-  userService = null
+  docaService = null
   state = {
     isLoading: false,
-    indexForm: 0,
+    indexForm: 0
   }
 
   componentDidMount() {
-    this.userService = new UserService()
+    this.docaService = new DocaService()
     Notiflix.Notify.Init({
       width:'300px',
       position:'right-top',
@@ -19,24 +20,23 @@ class New extends Component {
   }
 
   messageSuccess() {
-    Notiflix.Notify.Success('Usuário cadastrado com sucesso!')
+    Notiflix.Notify.Success('Doca cadastrada com sucesso!')
   }
-
   handleSubmit = async (values) => {
     try {
-      await this.userService.saveUser(values)
+      await this.docaService.saveDoca(values)
       this.setState({ indexForm: this.state.indexForm + 1 }, this.messageSuccess)
     } catch (error) {
-      Notiflix.Notify.Failure('Não foi cadastrar o usuário!')
+      Notiflix.Notify.Failure('Não foi cadastrar doca!')
     }
   }
   render() {
     const { 
-      isLoading,
       indexForm,
+      isLoading,
     } = this.state
     return (
-      <NewContainer
+      <NewContainer 
         key={indexForm}
         isLoading={isLoading}
         handleSubmit={this.handleSubmit}

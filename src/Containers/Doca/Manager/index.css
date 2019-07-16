@@ -1,5 +1,6 @@
 .card-margin {
   margin: 20px 0;
+  min-height: 500px;
 }
 
 .magitn-button {

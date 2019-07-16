@@ -1,21 +1,25 @@
-import axios from 'axios'
-const url = 'http://localhost:3000/api/v1/companies/11b8e205-83cc-4030-b15b-65e2f446f73b/docas'
-
+import request from './request'
+const url = '/docas'
 class DocaService {
+ 
+  constructor() {
+    this.axios = request.getAxiosInstance()
+  }
+
   saveDoca(value) {
-    return axios.post(url, value)
+    return this.axios.post(url, value)
   }
 
   docas() {
-    return axios.get(url)
+    return this.axios.get(url)
   }
 
   docaId(id) {
-    return axios.get(`${url}/${id}`)
+    return this.axios.get(`${url}/${id}`)
   }
 
   updateDoca(id, value) {
-    return axios.put(`${url}/${id}`, value)
+    return this.axios.put(`${url}/${id}`, value)
   }
 }
 
