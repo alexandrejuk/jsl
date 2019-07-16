@@ -2,8 +2,8 @@ import { path } from 'ramda'
 import axios from 'axios'
 import qs from 'qs'
 
-const HOST = process.env.REACT_APP_HOST
-const PORT = 3000
+const HOST = 'https://backend-jsl-cross.herokuapp.com'
+const PORT = 443
 
 
 const createInstance = () => {
