@@ -48,7 +48,6 @@ class New extends Component {
     },
     status: this.initialStatus,
     docaId: null,
-    barCode: '1234'
   })
 
   async handleOperations() {
