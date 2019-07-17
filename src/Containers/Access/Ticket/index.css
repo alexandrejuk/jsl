@@ -31,9 +31,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 35px;
 }
 .barcode-wrapper {
-  margin: auto;
+  text-align: center;
 }
 .barcode {
   text-align: center;

@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import Barcode from 'react-barcode'
+import QRCode from 'qrcode.react'
+
 import { Logo, CheckIn } from '../../../assets/'
 import './index.css'
-
 const Ticket = ({ handlePrint, ticketData }) => (
  <div>
     <div className='ticket-access-info no-print'>
@@ -19,7 +21,7 @@ const Ticket = ({ handlePrint, ticketData }) => (
         <img className='logo' src={Logo} alt='logo' />
       </div>
       <div className='qrcode'>
-        <img className='qrcodeImage' src='https://pngimg.com/uploads/qr_code/qr_code_PNG38.png' alt='qrcode' />
+        <QRCode size={110} value={ticketData} />
       </div>
      
     </div>
@@ -36,8 +38,7 @@ const Ticket = ({ handlePrint, ticketData }) => (
       </div>
     </div>
     <div className='barcode-wrapper'>
-      <p className='barcode'>{ticketData.barCode}</p>
-      <p className='code-plain-text'>{ticketData.barCode}</p>
+      <Barcode width={2} height={50} value={ticketData.barCode} />
     </div>
   </div>
   <div className='btn-group--ticket no-print'>
