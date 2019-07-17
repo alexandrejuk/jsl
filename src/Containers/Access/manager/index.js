@@ -102,7 +102,6 @@ class Manager extends Component {
     loading_unload: 'Carregar + Descarregar',
   }
 
-  console.lgo()
   renderTicket = ticket => (
     <tr key={ticket.id}>
       <td>{ticket.barCode}</td>

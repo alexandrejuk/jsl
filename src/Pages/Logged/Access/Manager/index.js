@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ManagerContainer from '../../../../Containers/Access/Manager'
+import ManagerContainer from '../../../../Containers/Access/manager'
 import TicketService from '../../../../services/ticket'
 import Notiflix from 'notiflix-react'
 
